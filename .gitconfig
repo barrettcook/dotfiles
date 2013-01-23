@@ -1,0 +1,52 @@
+[user]
+    name = Barrett Cook
+    email = bcook@tagged.com
+[alias]
+    st = status
+    di = diff
+    co = checkout
+    ci = commit
+    br = branch
+    sta = stash
+    cp = cherry-pick
+    svndiff = !git-svn-diff
+    sdiff = diff git-svn
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    svnup = !git stash && git svn rebase && git stash pop
+    rb = !post-review --parent=trunk --guess-description --username=bcook -o
+    rb-diff = !post-review -n --parent=trunk
+    pr = pull --rebase
+    shipit = !BRANCH=`echo $(git branch | grep "*" | sed "s/* //")` \
+        git svn dcommit && \
+        git checkout master && \
+        git svn rebase && \
+        git br -d $BRANCH
+[log]
+    date = local
+[color]
+    ui = auto
+[color "diff"]
+    whitespace = red reverse
+[core]
+    ignorecase = true
+    whitespace = fix,-indent-with-non-tab,trailing-space,ct-at-eol
+    editor = "/usr/bin/vim"
+	excludesfile = /Users/bcook/.gitignore
+[reviewboard]
+    url = https://scm.tagged.com/reviewboard
+[hub]
+	host = github.tagged.com
+[github "dgithub01.tag-dev.com"]
+    user = bcook
+[mergetool "mvim"]
+    cmd = /usr/local/bin/mvim -d -g $LOCAL $MERGED $REMOTE
+    keepbackup = false
+[merge]
+    tool = mvim
+[rerere]
+	enabled = true
+[diff]
+	algorithm = patience
+[credential]
+	helper = osxkeychain
