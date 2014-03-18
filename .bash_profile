@@ -1,10 +1,12 @@
 alias ls='ls -G'
 alias ll='ls -al'
+alias vi='vim'
 
 alias ssh='ssh -A'
 alias tagl='ssh tag-local.com'
 alias sadmin='ssh bcook@sadmin01.tag-stage.com'
 alias admin='ssh admin01.tagged.com'
+
 
 alias ga='git add'
 alias gl='git log'
@@ -38,6 +40,6 @@ export PATH=/usr/local/share/npm/bin/:/opt/local/bin:/opt/local/sbin:~/bin:/usr/
 
 [[ -s "/Users/bcook/.rvm/scripts/rvm" ]] && source "/Users/bcook/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
-export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+# export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
 export PHANTOMJS_BIN=/usr/local/share/npm/bin//phantomjs
