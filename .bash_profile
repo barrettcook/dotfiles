@@ -31,8 +31,7 @@ export PATH=/usr/local/share/npm/bin/:/opt/local/bin:/opt/local/sbin:~/bin:/usr/
 # export PHANTOMJS_BIN=/usr/local/share/npm/bin//phantomjs
 
 # Add support for RVM
-#source ~/.profile
-
+source ~/.profile
 source ~/.git-completion.bash
 source ~/.git-prompt
 
