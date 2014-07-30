@@ -23,17 +23,17 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 "
 " quick mappings to common dirs
-let $t = "~/src/web"
-let $d = "~/src"
+" let $t = "~/src/web"
+" let $d = "~/src"
 
 " Syntax highlighters
 au BufRead,BufNewFile *.handlebars,*.hbs,*.hjs set ft=handlebars
 autocmd! BufRead,BufNewFile *.less set filetype=less 
 
 " Remap .html files as .php
-augroup filetype
-    autocmd BufNewFile,BufRead ~/src/web/*.html set filetype=php
-augroup END
+" augroup filetype
+"     autocmd BufNewFile,BufRead ~/src/web/*.html set filetype=php
+" augroup END
 
 " Hide the toolbar in MacVim
 if has("gui_running")
