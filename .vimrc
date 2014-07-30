@@ -9,16 +9,16 @@ set autoindent
 filetype plugin indent on
 
 " set number
-" set guifont=Menlo\ Regular:h16
+set guifont=DejaVu\ Sans\ Mono:h14
 
 " keep context while scrolling. Keep 5 lines above or below
 set scrolloff=5
 
-colorscheme torte
+" colorscheme torte
 syntax on
 syntax enable
-" colorscheme solarized
-" set background=dark
+colorscheme solarized
+set background=dark
 let g:solarized_termtrans = 1
 set encoding=utf-8
 set showcmd                     " display incomplete commands
@@ -230,4 +230,4 @@ set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 
 let g:vim_markdown_folding_disabled=1
 
-set tags=~/src/tags
+set tags=/Volumes/eb_home/work/tags
