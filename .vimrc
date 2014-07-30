@@ -9,12 +9,21 @@ set autoindent
 filetype plugin indent on
 
 " set number
-set guifont=Menlo\ Regular:h16
+" set guifont=Menlo\ Regular:h16
 
 " keep context while scrolling. Keep 5 lines above or below
 set scrolloff=5
 
 colorscheme torte
+syntax on
+syntax enable
+" colorscheme solarized
+" set background=dark
+let g:solarized_termtrans = 1
+set encoding=utf-8
+set showcmd                     " display incomplete commands
+filetype plugin indent on       " load file type plugins + indentation
+set nocompatible                " choose no compatibility with legacy vi
 
 " set leader to ,
 let mapleader = ","
@@ -90,15 +99,10 @@ endif
 " CtrlP
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/target/*    " MacOSX/Linux
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+set runtimepath^=~/.vim/bundle/ctrlp.vim
   
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
-set nocompatible                " choose no compatibility with legacy vi
-syntax enable
-set encoding=utf-8
-set showcmd                     " display incomplete commands
-filetype plugin indent on       " load file type plugins + indentation
 
 "" Whitespace
 set nowrap                      " don't wrap lines
@@ -109,7 +113,18 @@ set backspace=indent,eol,start  " backspace through everything in insert mode
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 1
 
+" vim-airline
+" Note: Download the powerline-fonts, install them and set it as the default in terminal
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+let g:airline#extensions#tabline#enabled = 1
+set laststatus=2
 
+" Preserve indentation while pasting text from the OS X clipboard
+noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 
 
@@ -193,11 +208,6 @@ vnoremap <silent> # :call VisualSearch('b')<CR>
 cnoremap <C-A>      <Home>
 cnoremap <C-E>      <End>
 cnoremap <C-K>      <C-U>
-
-
-
-
-
 
 
 """"""""""""""""""""""""""""""
