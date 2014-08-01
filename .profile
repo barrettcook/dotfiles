@@ -9,3 +9,5 @@ function vg() {
        pushd $EB_HOME;
    fi
 }
+
+alias ebpaste='curl -F "upload=<-" https://paste.evbhome.com/post && echo'

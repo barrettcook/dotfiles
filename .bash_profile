@@ -2,6 +2,7 @@ alias ls='ls -G'
 alias ll='ls -al'
 
 alias ssh='ssh -A'
+alias vim='mvim'
 
 alias ga='git add'
 alias gl='git log'
@@ -15,8 +16,8 @@ alias gbr='git br'
 alias grc='git rebase --continue'
 alias git='hub'
 
-alias rb='post-review --guess-fields --target-groups=DevTools'
-alias pr='post-review'
+alias rb='rbt post --guess-fields --guess-summary'
+alias pr='rbt post'
 alias pru='pr -r'
 alias cb='pbcopy'
 
