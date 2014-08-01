@@ -9,7 +9,8 @@ set autoindent
 filetype plugin indent on
 
 " set number
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14
+" set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14
+set guifont=Inconsolata-dz\ for\ Powerline:h14
 
 " keep context while scrolling. Keep 5 lines above or below
 set scrolloff=5
