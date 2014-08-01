@@ -9,10 +9,13 @@ set autoindent
 filetype plugin indent on
 
 " set number
-set guifont=DejaVu\ Sans\ Mono:h14
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14
 
 " keep context while scrolling. Keep 5 lines above or below
 set scrolloff=5
+
+let g:netrw_liststyle=3 "Toggle list style of Explore mode
+map <leader>t :Explore<cr> 
 
 " colorscheme torte
 syntax on
@@ -35,14 +38,51 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " let $t = "~/src/web"
 " let $d = "~/src"
 
+" Use the below highlight group when displaying bad whitespace is desired.
+highlight BadWhitespace ctermbg=red guibg=red
+
 " Syntax highlighters
 au BufRead,BufNewFile *.handlebars,*.hbs,*.hjs set ft=handlebars
 autocmd! BufRead,BufNewFile *.less set filetype=less 
+au BufRead,BufNewFile *.html set filetype=mako
 
+" Display tabs at the beginning of a line in Python mode as bad.
+au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
+" Make trailing whitespace be flagged as bad.
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.sh match BadWhitespace /\s\+$/
+
+" Turn off settings in 'formatoptions' relating to comment formatting.
+" - c : do not automatically insert the comment leader when wrapping based on
+"    'textwidth'
+" - o : do not insert the comment leader when using 'o' or 'O' from command mode
+" - r : do not insert the comment leader when hitting <Enter> in insert mode
+" Python: not needed
+" C: prevents insertion of '*' at the beginning of every line in a comment
+au BufRead,BufNewFile *.c,*.h set formatoptions-=c formatoptions-=o formatoptions-=r
+
+" Use UNIX (\n) line endings.
+" Only used for new files so as to not force existing files to change their
+" line endings.
+" Python: yes
+" C: yes
+au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
+
+
+" rst docs
+" Make trailing whitespace be flagged as bad.
+au BufRead,BufNewFile *.rst match BadWhitespace /\s\+$/
+" Strip trailing whitespace on save
+au BufWritePre *.rst :%s/\s\+$//e
+
+" Bad whitespace for html, js, css and yaml
+au BufRead,BufNewFile *.html,*.css,*.js,*.less,*.yml match BadWhitespace /^\t\+/
+au BufRead,BufNewFile *.html,*.css,*.js,*.less,*.yml match BadWhitespace /\s\+$/
+au BufWritePre *.html,*.css,*.js,*.less,*.yml :%s/\s\+$//e
+"
 " Remap .html files as .php
-" augroup filetype
-"     autocmd BufNewFile,BufRead ~/src/web/*.html set filetype=php
-" augroup END
+augroup filetype
+    autocmd BufNewFile,BufRead ~/src/eventbritecore/*.html set filetype=python
+augroup END
 
 " Hide the toolbar in MacVim
 if has("gui_running")
@@ -68,7 +108,11 @@ autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
 
 set ruler "Always show current position
 
+set cc=80 "Column at 80 chars
+
 set showmatch "Show matching bracets when text indicator is over them
+
+match Error /\s\+$/
 
 " No sound on errors
 set noerrorbells
