@@ -14,9 +14,6 @@ set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14
 " keep context while scrolling. Keep 5 lines above or below
 set scrolloff=5
 
-let g:netrw_liststyle=3 "Toggle list style of Explore mode
-map <leader>t :Explore<cr> 
-
 " colorscheme torte
 syntax on
 syntax enable
@@ -37,6 +34,9 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " quick mappings to common dirs
 " let $t = "~/src/web"
 " let $d = "~/src"
+let g:netrw_liststyle=3 "Toggle list style of Explore mode
+map <leader>t :Explore<cr> 
+
 
 " Use the below highlight group when displaying bad whitespace is desired.
 highlight BadWhitespace ctermbg=red guibg=red
