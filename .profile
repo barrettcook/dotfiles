@@ -10,4 +10,7 @@ function vg() {
    fi
 }
 
+# VM memory size in MB
+export EB_VM_MEMSIZE="2048"
+
 alias ebpaste='curl -F "upload=<-" https://paste.evbhome.com/post && echo'
