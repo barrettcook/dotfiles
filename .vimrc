@@ -135,16 +135,18 @@ if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
 
     " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
     " ag is fast enough that CtrlP doesn't need to cache
-    let g:ctrlp_use_caching = 0
+    " let g:ctrlp_use_caching = 0
 endif
 
 " CtrlP
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/target/*    " MacOSX/Linux
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
   
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
@@ -165,7 +167,7 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 
 " Preserve indentation while pasting text from the OS X clipboard
