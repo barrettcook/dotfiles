@@ -142,7 +142,7 @@ if executable('ag')
 endif
 
 " CtrlP
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/target/*    " MacOSX/Linux
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/target/*,*.pyc    " MacOSX/Linux
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_max_files=0
