@@ -50,4 +50,4 @@ export CYAN='\e[0;36m'         # Cyan
 export WHITE='\e[0;37m'        # White
 export MAGENTA='\e[0;35m'      # Magenta
 
-export PS1="\[$GREEN\]\t \[$CYAN\]\u \[$YELLOW\]\w\[$MAGENTA\]\$(__git_ps1)\[$WHITE\]\$ "
+export PS1="\[$GREEN\]\t \[$CYAN\]\u \[$YELLOW\]\w\[$MAGENTA\]\$(__git_ps1)\[$WHITE\]\$\[$Color_Off\] "
