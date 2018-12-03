@@ -17,14 +17,17 @@ alias grc='git rebase --continue'
 alias git='hub'
 
 alias rb='rbt post --guess-fields --guess-summary'
-alias pr='rbt post'
+alias pr='rbt post -o'
 alias pru='pr -r'
 alias cb='pbcopy'
 
 alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
 
-export PATH=/usr/local/share/npm/bin/:/opt/local/bin:/opt/local/sbin:~/bin:/usr/local/bin:$PATH
+PATH=/usr/local/share/npm/bin/:/opt/local/bin:/opt/local/sbin:~/bin:/usr/local/bin:$PATH
+PATH="~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:${PATH}"
+export PATH
 
+export ANDROID_HOME=~/Library/Android/sdk
 # [[ -s "/Users/bcook/.rvm/scripts/rvm" ]] && source "/Users/bcook/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
@@ -33,8 +36,12 @@ export PATH=/usr/local/share/npm/bin/:/opt/local/bin:/opt/local/sbin:~/bin:/usr/
 
 # Add support for RVM
 source ~/.profile
-source ~/.git-completion.bash
 source ~/.git-prompt
+source ~/.git-completion.bash
+
+# Add source for NVM
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # Reset
 export Color_Off='\e[0m'       # Text Reset
@@ -51,3 +58,18 @@ export WHITE='\e[0;37m'        # White
 export MAGENTA='\e[0;35m'      # Magenta
 
 export PS1="\[$GREEN\]\t \[$CYAN\]\u \[$YELLOW\]\w\[$MAGENTA\]\$(__git_ps1)\[$WHITE\]\$\[$Color_Off\] "
+
+export KRB5_CONFIG=/etc/krb5.conf
+
+export PATH=/Users/barrett/.arcanist/arcanist/bin:$PATH
+source /Users/barrett/.arcanist/arcanist/resources/shell/bash-completion
+
+
+export ARCANIST_INSTALL_DIR=/Users/barrett/.evbdevtools
+source $ARCANIST_INSTALL_DIR/devtools/scripts/devenv_bash/arcanist_helpers.sh
+
+ssh-add
+ssh-add ~/.ssh/id_rsa_barrettcook
+
+export BAY_HOME=/Users/barrett/src/eventbrite/docker-dev
+

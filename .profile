@@ -1,4 +1,4 @@
-export EB_HOME="/Volumes/eb_home/work/eventbritecore/"
+export EB_HOME="/Users/barrett/src/eventbrite/core"
 function vg() {
    if [ $1 ]
    then
@@ -6,11 +6,19 @@ function vg() {
        vagrant $@;
        popd;
    else
-       pushd $EB_HOME;
+       cd $EB_HOME;
    fi
 }
 
 # VM memory size in MB
-export EB_VM_MEMSIZE="2048"
+# export EB_VM_MEMSIZE="4096"
+export EB_VM_MEMSIZE="8192"
+ssh-add  # Danger!
 
 alias ebpaste='curl -F "upload=<-" https://paste.evbhome.com/post && echo'
+alias ebselenium='ps -ef | grep selenium'
+alias rmpyc='find . -name \*.pyc -print0 | xargs -0 rm'
+
+for filename in /Users/barrett/src/eventbrite/docker-dev/scripts/profile/*.bash; do
+    source $filename
+done

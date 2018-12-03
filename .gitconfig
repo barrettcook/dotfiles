@@ -17,17 +17,14 @@
     rb = !post-review --parent=trunk --guess-description --username=bcook -o
     rb-diff = !post-review -n --parent=trunk
     pr = pull --rebase
+	ctags = !.git/hooks/ctags
 [log]
     date = local
-[color]
-    ui = auto
-[color "diff"]
-    whitespace = red reverse
 [core]
     ignorecase = true
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-    editor = "/usr/bin/vim"
-	excludesfile = /Users/bcook/.gitignore
+    editor = "/usr/local/bin/mvim -f"
+	excludesfile = ~/.gitignore
 [reviewboard]
     url = https://reviews.evbhome.com/
 [mergetool "mvim"]
@@ -40,4 +37,14 @@
 [diff]
 	algorithm = patience
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
+[color]
+    ui = auto
+[color "diff"]
+    whitespace = red reverse
+
+[init]
+	templatedir = ~/.git_template
+[branch]
+	autosetuprebase = always
+	autosetupmerge = always
