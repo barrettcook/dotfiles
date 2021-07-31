@@ -42,8 +42,9 @@ set showcmd                     " display incomplete commands
 set nocompatible                " choose no compatibility with legacy vi
 
 " Enable SemanticHighlight when opening Vim
-au BufRead,BufNewFile *.py,*.html,*.js SemanticHighlight
+au BufRead,BufNewFile *.py,*.html,*.js,*.jsx SemanticHighlight
 nnoremap <Leader>s :SemanticHighlightToggle<cr>
+let g:semanticTermColors = [28,1,2,3,4,5,6,7,25,9,10,34,12,13,14,15,16,125,124,19]
 
 " Toggle list style of Explore mode
 let g:netrw_liststyle=3

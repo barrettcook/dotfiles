@@ -1,13 +1,13 @@
 #!/bin/bash
 
 pushd ~
-ln -s src/dotfiles/.bash_profile .bash_profile
-ln -s src/dotfiles/.profile .profile
-ln -s src/dotfiles/vim .vim
-ln -s src/dotfiles/.vimrc .vimrc
-ln -s src/dotfiles/.gitignore .gitignore
-ln -s src/dotfiles/git-prompt.sh .git-prompt
-ln -s src/dotfiles/git-completion.bash .git-completion.bash
+ln -s src/barrettcook/dotfiles/.bash_profile .bash_profile
+ln -s src/barrettcook/dotfiles/.profile .profile
+ln -s src/barrettcook/dotfiles/vim .vim
+ln -s src/barrettcook/dotfiles/.vimrc .vimrc
+ln -s src/barrettcook/dotfiles/.gitignore .gitignore
+ln -s src/barrettcook/dotfiles/git-prompt.sh .git-prompt
+ln -s src/barrettcook/dotfiles/git-completion.bash .git-completion.bash
 popd
 
 mkdir -p ~/.vim/bundle
@@ -21,5 +21,5 @@ git clone git://github.com/mustache/vim-mustache-handlebars.git
 popd
 
 pushd ~
-ln -s src/dotfiles/.gitconfig .gitconfig
+ln -s src/barrettcook/dotfiles/.gitconfig .gitconfig
 popd

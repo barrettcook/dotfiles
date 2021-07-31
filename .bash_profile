@@ -1,3 +1,5 @@
+export BASH_CONF="bash_profile"
+
 alias ls='ls -G'
 alias ll='ls -al'
 
@@ -21,11 +23,17 @@ alias pr='rbt post -o'
 alias pru='pr -r'
 alias cb='pbcopy'
 
+alias ag='ag --path-to-ignore ~/.ignore'
+
 alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
 
 PATH=/usr/local/share/npm/bin/:/opt/local/bin:/opt/local/sbin:~/bin:/usr/local/bin:$PATH
 PATH="~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:${PATH}"
+PATH=/Users/barrett/Library/Python/2.7/bin:$PATH
+PATH=/Users/barrett/src/eventbrite/confluent-5.3.2/bin/:$PATH
 export PATH
+
+export PIP_INDEX_URL=https://devpi.evbhome.com/eventbrite/stable/+simple/
 
 export ANDROID_HOME=~/Library/Android/sdk
 # [[ -s "/Users/bcook/.rvm/scripts/rvm" ]] && source "/Users/bcook/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
@@ -40,8 +48,12 @@ source ~/.git-prompt
 source ~/.git-completion.bash
 
 # Add source for NVM
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+# export NVM_DIR=~/.nvm
+# source $(brew --prefix nvm)/nvm.sh
+
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
 # Reset
 export Color_Off='\e[0m'       # Text Reset
@@ -61,15 +73,13 @@ export PS1="\[$GREEN\]\t \[$CYAN\]\u \[$YELLOW\]\w\[$MAGENTA\]\$(__git_ps1)\[$WH
 
 export KRB5_CONFIG=/etc/krb5.conf
 
-export PATH=/Users/barrett/.arcanist/arcanist/bin:$PATH
-source /Users/barrett/.arcanist/arcanist/resources/shell/bash-completion
+# export PATH=/Users/barrett/.arcanist/arcanist/bin:$PATH
+# source /Users/barrett/.arcanist/arcanist/resources/shell/bash-completion
+# export ARCANIST_INSTALL_DIR=/Users/barrett/.evbdevtools
+# source $ARCANIST_INSTALL_DIR/devtools/scripts/devenv_bash/arcanist_helpers.sh
 
-
-export ARCANIST_INSTALL_DIR=/Users/barrett/.evbdevtools
-source $ARCANIST_INSTALL_DIR/devtools/scripts/devenv_bash/arcanist_helpers.sh
-
-ssh-add
-ssh-add ~/.ssh/id_rsa_barrettcook
+# ssh-add
+# ssh-add ~/.ssh/id_rsa_barrettcook
 
 export BAY_HOME=/Users/barrett/src/eventbrite/docker-dev
-
+nvm use v12

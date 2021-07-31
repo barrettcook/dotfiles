@@ -1,7 +1,9 @@
 .DS_Store
 node_modules
 *.pyc
+ctrl-p.vim/
 vim/bundle/
+vim/undodir/
 .netrwhist
 require_built/
 /Volumes/eb_home/work/eventbritecore/django/media/django/js/require_built
