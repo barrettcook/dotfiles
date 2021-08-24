@@ -16,7 +16,7 @@ alias gam='git ci -a -m'
 alias gsr='git svn rebase'
 alias gbr='git br'
 alias grc='git rebase --continue'
-alias git='hub'
+#alias git='hub'
 
 alias rb='rbt post --guess-fields --guess-summary'
 alias pr='rbt post -o'
@@ -44,32 +44,32 @@ export ANDROID_HOME=~/Library/Android/sdk
 
 # Add support for RVM
 source ~/.profile
-source ~/.git-prompt
-source ~/.git-completion.bash
+#source ~/.git-prompt
+#source ~/.git-completion.bash
 
 # Add source for NVM
 # export NVM_DIR=~/.nvm
 # source $(brew --prefix nvm)/nvm.sh
 
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+#  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
-# Reset
-export Color_Off='\e[0m'       # Text Reset
-
-# Regular Colors
-export BLACK='\e[0;30m'        # Black
-export RED='\e[0;31m'          # Red
-export GREEN='\e[0;32m'        # Green
-export YELLOW='\e[0;33m'       # Yellow
-export BLUE='\e[0;34m'         # Blue
-export PURPLE='\e[0;35m'       # Purple
-export CYAN='\e[0;36m'         # Cyan
-export WHITE='\e[0;37m'        # White
-export MAGENTA='\e[0;35m'      # Magenta
-
-export PS1="\[$GREEN\]\t \[$CYAN\]\u \[$YELLOW\]\w\[$MAGENTA\]\$(__git_ps1)\[$WHITE\]\$\[$Color_Off\] "
+## Reset
+#export Color_Off='\e[0m'       # Text Reset
+#
+## Regular Colors
+#export BLACK='\e[0;30m'        # Black
+#export RED='\e[0;31m'          # Red
+#export GREEN='\e[0;32m'        # Green
+#export YELLOW='\e[0;33m'       # Yellow
+#export BLUE='\e[0;34m'         # Blue
+#export PURPLE='\e[0;35m'       # Purple
+#export CYAN='\e[0;36m'         # Cyan
+#export WHITE='\e[0;37m'        # White
+#export MAGENTA='\e[0;35m'      # Magenta
+#
+#export PS1="\[$GREEN\]\t \[$CYAN\]\u \[$YELLOW\]\w\[$MAGENTA\]\$(__git_ps1)\[$WHITE\]\$\[$Color_Off\] "
 
 export KRB5_CONFIG=/etc/krb5.conf
 
